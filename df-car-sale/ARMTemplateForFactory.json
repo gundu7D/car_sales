@@ -41,7 +41,14 @@
 					{
 						"name": "Copy data1",
 						"type": "Copy",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Web1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "0.12:00:00",
 							"retry": 0,
@@ -55,7 +62,12 @@
 								"type": "DelimitedTextSource",
 								"storeSettings": {
 									"type": "HttpReadSettings",
-									"requestMethod": "GET"
+									"requestMethod": "GET",
+									"additionalHeaders": {
+										"value": "@{concat('Authorization: Bearer ', activity('Web1').output.access_token)}\nactivity('Web1').output",
+										"type": "Expression"
+									},
+									"requestTimeout": ""
 								},
 								"formatSettings": {
 									"type": "DelimitedTextReadSettings"
@@ -90,6 +102,24 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Web1",
+						"type": "WebActivity",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"method": "GET",
+							"headers": {},
+							"url": "https://raw.githubusercontent.com/gundu7D/car_sales/main/raw/car_sales.csv"
+						}
 					}
 				],
 				"policy": {
