@@ -27,10 +27,6 @@
 						"storeSettings": {
 							"type": "HttpReadSettings",
 							"requestMethod": "GET",
-							"additionalHeaders": {
-								"value": "@{concat('Authorization: Bearer ', activity('Web1').output.access_token)}\nactivity('Web1').output",
-								"type": "Expression"
-							},
 							"requestTimeout": ""
 						},
 						"formatSettings": {
@@ -68,6 +64,8 @@
 			{
 				"name": "Web1",
 				"type": "WebActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
