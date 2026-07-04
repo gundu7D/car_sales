@@ -2,7 +2,7 @@
 	"name": "AzureSqlTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_sink_linkedservice",
+			"referenceName": "AzureSqlDatabase1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -57,10 +57,6 @@
 				"name": "Product_Name",
 				"type": "varchar"
 			}
-		],
-		"typeProperties": {
-			"schema": "dbo",
-			"table": "source_cars_data"
-		}
+		]
 	}
 }
