@@ -43,10 +43,7 @@
 				"inputs": [
 					{
 						"referenceName": "ds_car_sales",
-						"type": "DatasetReference",
-						"parameters": {
-							"file_name": "string"
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
@@ -57,11 +54,6 @@
 				]
 			}
 		],
-		"parameters": {
-			"file_name": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"lastPublishTime": "2026-07-04T14:24:53Z"
 	},
