@@ -1,0 +1,15 @@
+{
+	"name": "df-car-sale",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "germanywestcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7b3d568d-5d8a-4659-9168-c6fd9c09955a",
+		"tenantId": "c61f1a77-812f-4f02-bed7-8b448c966c38"
+	}
+}
